@@ -1,0 +1,86 @@
+/* Additional CSS animations for Tesla OS V12 Interface */
+
+/* Track info change animation */
+.track-info.changing {
+  animation: fadeOut 0.15s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Control item active state */
+.control-item.active {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Button active states */
+.control-button:active, .nav-button:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+/* Car visualization transitions */
+.car-visualization {
+  transition: transform 0.5s ease-out;
+}
+
+.car-visualization:hover {
+  transform: scale(1.02);
+}
+
+/* Map transitions */
+.map-section {
+  transition: width 0.3s ease-out;
+}
+
+/* Media player hover effects */
+.media-controls .control-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* Progress bar animation */
+.progress-fill {
+  transition: width 0.3s linear;
+}
+
+/* Navigation button hover */
+.nav-button-container:hover .nav-button-label {
+  color: var(--color-accent);
+  transition: color 0.2s ease;
+}
+
+/* Status bar transitions */
+.status-bar {
+  transition: background-color 0.3s ease;
+}
+
+/* Smooth page transitions */
+.tesla-os-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Pulse animation for charging indicator */
+.charging-indicator {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Slide transitions for controls */
+.control-bar {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

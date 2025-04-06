@@ -1,0 +1,96 @@
+/* Styles for temperature display and app icons */
+
+.app-dock-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  z-index: 100;
+}
+
+.app-dock-left {
+  display: flex;
+  align-items: center;
+}
+
+.app-dock-center {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.app-dock-right {
+  display: flex;
+  align-items: center;
+}
+
+.temperature-display {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.app-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.volume-controls {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.volume-icon {
+  margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .app-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .temperature-display {
+    font-size: 20px;
+  }
+  
+  .app-dock-center {
+    gap: 12px;
+  }
+}
+
+/* Adjust control bar position to accommodate the new app dock */
+.control-bar {
+  margin-bottom: 56px;
+}

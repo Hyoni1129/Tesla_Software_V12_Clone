@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tesla OS V12 Interface</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navigation-animations.css">
+    <link rel="stylesheet" href="css/tablet-optimization.css">
+    <link rel="stylesheet" href="css/app-icons.css">
+</head>
+<body>
+    <div class="tesla-os-container">
+        <!-- Top Status Bar -->
+        <header class="status-bar">
+            <div class="status-left">
+                <span class="time">10:26 am</span>
+            </div>
+            <div class="status-center">
+                <span class="lock-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M18,8h-1V6c0-2.76-2.24-5-5-5S7,3.24,7,6v2H6c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V10C20,8.9,19.1,8,18,8z M12,17c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S13.1,17,12,17z M15.1,8H8.9V6c0-1.71,1.39-3.1,3.1-3.1c1.71,0,3.1,1.39,3.1,3.1V8z"></path>
+                    </svg>
+                </span>
+            </div>
+            <div class="status-right">
+                <div class="trip-info">
+                    <span class="trip-time">30 min</span>
+                    <span class="trip-distance">28 mi</span>
+                    <div class="battery-indicator">
+                        <span class="battery-icon">
+                            <svg viewBox="0 0 24 12" width="24" height="12">
+                                <rect x="1" y="1" width="20" height="10" rx="1" ry="1" stroke="currentColor" stroke-width="1" fill="none"/>
+                                <rect x="2" y="2" width="14" height="8" fill="currentColor"/>
+                                <rect x="22" y="4" width="1" height="4" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="battery-percentage">70%</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Car Visualization Section -->
+            <section class="car-visualization">
+                <div class="car-model">
+                    <!-- Car model will be rendered here via JavaScript -->
+                </div>
+                <div class="car-controls">
+                    <div class="control-item left">
+                        <span class="control-label">Open</span>
+                        <span class="control-value">Frunk</span>
+                    </div>
+                    <div class="control-item right">
+                        <span class="control-label">Open</span>
+                        <span class="control-value">Trunk</span>
+                    </div>
+                    <div class="charging-indicator">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map-section">
+                <div id="map-container">
+                    <!-- Map will be rendered here via JavaScript -->
+                </div>
+                <div class="map-overlay">
+                    <div class="destination-info">
+                        <span class="destination-name">SFO Airport Terminal 2</span>
+                        <div class="route-indicator">
+                            <!-- Route indicator arrow -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Control Bar -->
+        <footer class="control-bar">
+            <!-- Media Player -->
+            <div class="media-player">
+                <div class="media-info">
+                    <div class="album-art">
+                        <!-- Album art placeholder -->
+                    </div>
+                    <div class="track-info">
+                        <div class="track-title">Under the Bridge</div>
+                        <div class="track-artist">Heathered Pearls</div>
+                    </div>
+                </div>
+                <div class="media-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="media-controls">
+                    <button class="control-button prev">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M6,18V6H8V18H6M9.5,12L18,6V18L9.5,12Z"/>
+                        </svg>
+                    </button>
+                    <button class="control-button play-pause">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z"/>
+                        </svg>
+                    </button>
+                    <button class="control-button next">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M16,18H18V6H16M6,18L14.5,12L6,6V18Z"/>
+                        </svg>
+                    </button>
+                    <button class="control-button favorite">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                        </svg>
+                    </button>
+                    <button class="control-button equalizer">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M10,20H14V4H10V20M4,20H8V12H4V20M16,9V20H20V9H16Z"/>
+                        </svg>
+                    </button>
+                    <button class="control-button search">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="navigation-controls">
+                <div class="nav-button-container">
+                    <button class="nav-button">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                        </svg>
+                    </button>
+                    <span class="nav-button-label">End Trip</span>
+                </div>
+                <div class="nav-button-container">
+                    <button class="nav-button menu">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- App Dock with Temperature and App Icons -->
+    <div class="app-dock-container">
+        <div class="app-dock-left">
+            <div class="car-icon app-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5,11L6.5,6.5H17.5L19,11M17.5,16A1.5,1.5 0 0,1 16,14.5A1.5,1.5 0 0,1 17.5,13A1.5,1.5 0 0,1 19,14.5A1.5,1.5 0 0,1 17.5,16M6.5,16A1.5,1.5 0 0,1 5,14.5A1.5,1.5 0 0,1 6.5,13A1.5,1.5 0 0,1 8,14.5A1.5,1.5 0 0,1 6.5,16M18.92,6C18.72,5.42 18.16,5 17.5,5H6.5C5.84,5 5.28,5.42 5.08,6L3,12V20A1,1 0 0,0 4,21H5A1,1 0 0,0 6,20V19H18V20A1,1 0 0,0 19,21H20A1,1 0 0,0 21,20V12L18.92,6Z"/>
+                </svg>
+            </div>
+            <div class="temperature-display">
+                72°
+            </div>
+        </div>
+        <div class="app-dock-center">
+            <div class="phone-icon app-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                </svg>
+            </div>
+            <div class="message-icon app-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z"/>
+                </svg>
+            </div>
+            <div class="camera-icon app-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"/>
+                </svg>
+            </div>
+            <div class="navigation-icon app-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                </svg>
+            </div>
+            <div class="apps-icon app-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16,20H20V16H16M16,14H20V10H16M10,8H14V4H10M16,8H20V4H16M10,14H14V10H10M4,14H8V10H4M4,20H8V16H4M10,20H14V16H10M4,8H8V4H4V8Z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="app-dock-right">
+            <div class="volume-controls">
+                <div class="volume-icon app-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/car-visualization.js"></script>
+    <script src="js/apple-maps-integration.js"></script>
+    <script src="js/navigation-ui.js"></script>
+    <script src="js/speed-display.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

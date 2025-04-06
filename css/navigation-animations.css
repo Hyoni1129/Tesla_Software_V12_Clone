@@ -1,0 +1,214 @@
+/* Navigation UI Animations for Tesla OS V12 Interface */
+
+/* Car visualization push animation */
+.car-pushed {
+    transform: translateX(-30%) scale(0.9);
+    transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Map expansion animation */
+.map-expanded {
+    flex: 2;
+    transition: flex 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Navigation overlay animations */
+.navigation-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    z-index: 100;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.navigation-active {
+    transform: translateX(0);
+}
+
+/* Search container animations */
+.search-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.search-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Speed indicator animations */
+.speed-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.speed-indicator.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navigation instruction animations */
+.upcoming-instruction {
+    background-color: #3e6ae1;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    transform: translateX(-10px);
+    opacity: 0;
+    animation: slideInRight 0.5s forwards 0.3s;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Route steps animations */
+.route-step {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.route-step:nth-child(1) {
+    animation: fadeInUp 0.3s forwards 0.4s;
+}
+
+.route-step:nth-child(2) {
+    animation: fadeInUp 0.3s forwards 0.5s;
+}
+
+.route-step:nth-child(3) {
+    animation: fadeInUp 0.3s forwards 0.6s;
+}
+
+.route-step:nth-child(4) {
+    animation: fadeInUp 0.3s forwards 0.7s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation action buttons animations */
+.nav-action-button {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.autopilot {
+    animation: fadeInScale 0.3s forwards 0.8s;
+}
+
+.cancel {
+    animation: fadeInScale 0.3s forwards 0.9s;
+}
+
+@keyframes fadeInScale {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.nav-action-button:hover {
+    transform: scale(1.05);
+}
+
+.nav-action-button:active {
+    transform: scale(0.95);
+}
+
+/* Navigation summary animations */
+.navigation-summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Destination details animations */
+.destination-details {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards 0.7s;
+}
+
+/* Map click ripple effect */
+.map-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

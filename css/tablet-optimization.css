@@ -1,0 +1,215 @@
+/* Additional responsive styles for tablet optimization */
+
+/* Media queries for different tablet sizes */
+@media (max-width: 1024px) {
+  /* iPad Pro and similar large tablets */
+  .status-bar {
+    height: 40px;
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+  
+  .status-left .time {
+    font-size: var(--font-size-md);
+  }
+  
+  .trip-info {
+    gap: var(--spacing-sm);
+  }
+  
+  .car-model {
+    width: 60%;
+    height: 60%;
+  }
+  
+  .control-item.left {
+    left: 20%;
+  }
+  
+  .control-item.right {
+    right: 20%;
+  }
+  
+  .map-section {
+    width: 35%;
+  }
+  
+  .control-bar {
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* iPad Mini, Galaxy Tab and similar medium tablets */
+  .status-bar {
+    height: 35px;
+  }
+  
+  .status-left .time {
+    font-size: var(--font-size-sm);
+  }
+  
+  .status-center .lock-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .trip-time, .trip-distance {
+    font-size: var(--font-size-sm);
+  }
+  
+  .car-model {
+    width: 55%;
+    height: 55%;
+  }
+  
+  .control-item.left {
+    left: 15%;
+  }
+  
+  .control-item.right {
+    right: 15%;
+  }
+  
+  .control-label {
+    font-size: var(--font-size-xs);
+  }
+  
+  .control-value {
+    font-size: var(--font-size-md);
+  }
+  
+  .map-section {
+    width: 40%;
+  }
+  
+  .destination-name {
+    font-size: var(--font-size-sm);
+  }
+  
+  .control-bar {
+    height: 60px;
+  }
+  
+  .media-player {
+    padding: var(--spacing-xs);
+    gap: var(--spacing-sm);
+  }
+  
+  .album-art {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .track-title {
+    font-size: var(--font-size-sm);
+  }
+  
+  .track-artist {
+    font-size: var(--font-size-xs);
+  }
+  
+  .media-controls {
+    gap: var(--spacing-md);
+  }
+  
+  .control-button svg,
+  .nav-button svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .nav-button-label {
+    font-size: 10px;
+  }
+}
+
+/* Touch-specific optimizations */
+@media (pointer: coarse) {
+  /* Increase touch target sizes */
+  .control-button, 
+  .nav-button {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-item {
+    padding: var(--spacing-md);
+  }
+  
+  /* Add active states for touch feedback */
+  .control-button:active,
+  .nav-button:active,
+  .control-item:active {
+    opacity: 0.7;
+    transform: scale(0.95);
+    transition: transform 0.1s ease, opacity 0.1s ease;
+  }
+  
+  /* Optimize progress bar for touch */
+  .progress-bar {
+    height: 6px;
+  }
+  
+  /* Prevent text selection */
+  * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Landscape orientation optimization */
+@media screen and (orientation: landscape) {
+  .tesla-os-container {
+    flex-direction: column;
+  }
+}
+
+/* Portrait warning for tablets */
+@media screen and (orientation: portrait) {
+  .tesla-os-container::before {
+    content: "Please rotate your device to landscape mode for the best Tesla OS experience";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 9999;
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Hardware acceleration for smoother animations */
+.tesla-os-container,
+.car-visualization,
+.map-section,
+.control-bar,
+.media-player,
+.progress-fill {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}

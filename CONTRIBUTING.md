@@ -12,6 +12,8 @@ Use the following format for your commit messages:
 
 <type>(optional scope): <short summary>
 
+
+
 - **type**: The category of the change (see below).
 - **scope**: *(optional)* The part of the codebase the change affects.
 - **short summary**: A brief description of what was done, written in the imperative mood.
